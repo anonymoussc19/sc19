@@ -1,1 +1,1 @@
-g++ -O3 -std=c99 -mavx2 *.c
+g++ -O3 -fopenmp -std=c99 -mavx2 *.c
