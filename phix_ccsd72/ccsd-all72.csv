@@ -1,0 +1,33 @@
+./abcd-aebf-dfce.c  ,   aebf-dfce
+flopcnt = 1393140695040.000000, tot cyc=  76586856508,  cycles,    18.1903, flops/cycle
+
+./abcd-aecf-fbed.c  ,   abcd-aecf-fbed
+flopcnt = 1393140695040.000000, tot cyc=  76091902770,  cycles,    18.3087, flops/cycle
+
+./abcd-aedf-bfce.c  ,   abcd-aedf-bfce
+flopcnt = 1393140695040.000000, tot cyc=  76083430586,  cycles,    18.3107, flops/cycle
+
+./abcd-aedf-fbec.c  ,   abcd-aedf-fbec
+flopcnt = 1393140695040.000000, tot cyc=  76148540032,  cycles,    18.2950, flops/cycle
+
+./abcd-aefb-fdce.c  ,   aefb-fdce
+flopcnt = 1393140695040.000000, tot cyc=  76403239282,  cycles,    18.2341, flops/cycle
+
+./abcd-aefc-fbed.c  ,   aefc-fbed
+flopcnt = 1393140695040.000000, tot cyc=  75806674816,  cycles,    18.3775, flops/cycle
+
+./abcd-eafb-fdec.c  ,   eafb-fdec
+flopcnt = 1393140695040.000000, tot cyc=  76255721070,  cycles,    18.2693, flops/cycle
+
+./abcd-eafc-bfde.c  ,   abcd-eafc-bfde
+flopcnt = 1393140695040.000000, tot cyc=  76219858392,  cycles,    18.2779, flops/cycle
+
+./abcd-eafd-fbec.c  ,   abcd-eafd-fbec
+flopcnt = 1393140695040.000000, tot cyc=  76357626498,  cycles,    18.2449, flops/cycle
+
+./abcd-aebf-fdec.c  ,   aebf-fdec
+flopcnt = 1393140695040.000000, tot cyc=  76079708466,  cycles,    18.3116, flops/cycle
+
+./abcd-aecf-bfde.c  ,   abcd-aecf-bfde
+flopcnt = 1393140695040.000000, tot cyc=  76410110494,  cycles,    18.2324, flops/cycle
+
