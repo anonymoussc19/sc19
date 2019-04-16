@@ -1,5 +1,23 @@
 Tile Solver
 
+Please download AMPL interface at: 
+https://ampl.com/products/
+(Try to download the demo version if you don't want to buy)
+https://ampl.com/try-ampl/download-a-free-demo/
+
+Please download opensource solver at : https://projects.coin-or.org/Couenne
+
+Or if you cannot compile, download Couenne binary at https://ampl.com/products/solvers/open-source/#bonmin
+
+Add the binaries to $PATH
+
+
+
+check the CMakeList.txt under tool/src, build it use cmake.
+
+move the couenne.opt and tileinput.txt to where you build and run the Tool binary.
+
+*Note the current machine spec is for i7 6700K skylake
 
 
 run ./Tool tile_input.txt ccsdt for tile size solving following bench:
