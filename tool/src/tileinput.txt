@@ -1,0 +1,11 @@
+3 3
+#The following lists Tensor using-idx mapping, start with how many idices does the tensor have.
+#the next #tensors line records mapping.
+M 2 1 1 2
+M 2 2 1 3
+M 2 3 2 3
+# C: i,j;   A: i,k;   B: j,k;
+
+
+
+
