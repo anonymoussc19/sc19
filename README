@@ -58,6 +58,7 @@ abcde-*****-**
 
 
 
-
+TEST:
+under test folder:
 
 g++ -O3 -fopenmp -std=c99 -mavx2 *.c
