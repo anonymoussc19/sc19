@@ -276,6 +276,19 @@ int main(int argc, char**argv){
 //    auto cache_vol = vector<double>({4096/8*7, 7*4096, 1024*1024-65536});
 //    auto cache_vol = vector<double>({4096/8*8, 8*4096, 1024*1024});
 //    auto cache_way = vector<int>({512, 512*8, 65536});
+
+    if(string(argv[3]) == string("broadwell")){
+        printf("bdwl\n");
+         bdw = vector<double>({3.16*4, 2.46*4, 1.43*4, 0.76*4}); //
+         cache_vol = vector<double>({4096, 8*4096, 4480*1024});  //
+         cache_way = vector<int>({512, 512*8, 229376});          //
+        
+    }
+    else if (string(argv[3]) == string("skylake")){
+             bdw = vector<double>({2.42*4, 2.29*4, 1.6*4, 0.8*4});  //
+             cache_vol = vector<double>({4096, 8*4096, 1024*1024}); //
+             cache_way = vector<int>({512, 512*8*2, 65536});        //
+    }
     
     ampl_gen.set_bw_ca(bdw, cache_vol, cache_way);
     
@@ -375,7 +388,7 @@ int main(int argc, char**argv){
             //for 1 cfun
             //need to know how cost func map to tile size, then replace up/lw bound.
             cout<<"solvec size"<<sol_vec.size()<<endl;
-
+            if(sol_vec.size()==0)break;
 
             // intflag = vector<bool> ({true, true, true});
             // sol_vec = MakeSolutionVector(ampl_gen, local_upb, local_lwb, all_tile_lv, intflag, all_cost_lv, cfun, local_efflv, "couenne", bottlv);
