@@ -43,15 +43,15 @@ int main(int argc, char** argv){
     Tn4 = B_range_a * B_range_c * B_range_d*B_range_e;
 
     Tk0 = 1; Tm0 =6; Tn0=8;
-    Tn3 = 2730/336*336;
+    Tn3 = 2582/128*128;
+//    Tn3 = 20000/48*48;
     Tm3 = 24;
-
-    Tn2 = 336;        
+        
+    Tn2 = 128;
     Tm2 = 24 ;
     
     Tn1 = 16;
-    Tm1 = 24;
-
+    Tm1 =24;
     Tk1 = Tk2 = Tk3  = 32;
     printf("abcde-efcad-bf\n");
     double *A, *B, *C, *Abuf, *Bbuf;
@@ -75,15 +75,15 @@ int main(int argc, char** argv){
     double alpha = 1.0;
     double beta = 1.0;
     static tsc_counter a,b;
-    CPUID(); RDTSC(a); CPUID(); RDTSC(b); 
+    CPUID(); RDTSC(a); CPUID(); RDTSC(b);
     /* warm up */
-    CPUID(); RDTSC(a); CPUID(); RDTSC(b); 
+    CPUID(); RDTSC(a); CPUID(); RDTSC(b);
     /* warm up */
-    CPUID(); RDTSC(a); CPUID(); RDTSC(b); 
+    CPUID(); RDTSC(a); CPUID(); RDTSC(b);
 
     int tot_runtime = 5;
-double start = omp_get_wtime();
     RDTSC(a);
+    double start = omp_get_wtime();
     for(int ccnt = 0; ccnt < tot_runtime; ccnt++){
 
 
@@ -533,24 +533,21 @@ double start = omp_get_wtime();
                     for(int k3 = 0; k3 < Tk3; k3 += Tk2)
                     {
                         if(+k3+k4>=Tk4)break;
-
-
-			for(int m3 = 0; m3 < Tm3; m3 += Tm2)
-			  {
-			    if(+m3+m4>=Tm4)break;
-			for(int n3 = 0; n3 < Tn3; n3 += Tn2)
+                        for(int m3 = 0; m3 < Tm3; m3 += Tm2)
+                        {
+                            if(+m3+m4>=Tm4)break;
+                            for(int n3 = 0; n3 < Tn3; n3 += Tn2)
                             {
-			      if(+n3+n4>=Tn4)break;
+                                if(+n3+n4>=Tn4)break;
                                 for(int k2 = 0; k2 < Tk2; k2 += Tk1)
                                 {
                                     if(+k2+k3+k4>=Tk4)break;
-                             
+                                    for(int n2 = 0; n2 < Tn2; n2 += Tn1)
+                                    {
+                                        if(+n2+n3+n4>=Tn4)break;
                                         for(int m2 = 0; m2 < Tm2; m2 += Tm1)
                                         {
                                             if(+m2+m3+m4>=Tm4)break;
-					    for(int n2 = 0; n2 < Tn2; n2 += Tn1)
-					      {
-                                        if(+n2+n3+n4>=Tn4)break;
                                             for(int m1 = 0; m1 < Tm1; m1 += Tm0)
                                             {
                                                 if(+m1+m2+m3+m4>=Tm4)break;
@@ -589,12 +586,14 @@ double start = omp_get_wtime();
         }
 
     }//end ccnt
-    RDTSC(b); 
+    RDTSC(b);
+    double  runtime = omp_get_wtime() - start;
     double flop_count = 2.0 * C_range_c * C_range_a *C_range_b * C_range_d * C_range_e*C_range_f* tot_runtime;
-    long long cycles_tuned = (long)(((double) (COUNTER_DIFF_SIMPLE(b,a))) / ((long long) 1)); double  runtime = omp_get_wtime() - start;
+    long long cycles_tuned = (long)(((double) (COUNTER_DIFF_SIMPLE(b,a))) / ((long long) 1));
     printf("flopcnt = %lf, ",flop_count);
+    printf("gflops = %lf\n", flop_count/1000/1000/1000/runtime);
     double flops_cycle_tuned = ((double)flop_count)/((double)cycles_tuned);
-    printf("tot cyc= %12ld,  cycles,    %2.4f, flops/cycle\n",cycles_tuned, flops_cycle_tuned);printf("gflops = %lf\n", flop_count/1000/1000/1000/runtime); printf("");
+    printf("tot cyc= %12ld,  cycles,    %2.4f, flops/cycle\n",cycles_tuned, flops_cycle_tuned);
 
     for(int i=0;i<tot_runtime;i++)
     compare_fun(A, B, C1);
