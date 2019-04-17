@@ -1,5 +1,5 @@
 #!/bin/bash
-module load gcc/5.3.0
+
  for i in $( find . -name "abcd-*.c" ); do
      gcc -O3 -fopenmp --std=c99  $i -o "$i.exe"
      echo -ne "$i  ,   " 
