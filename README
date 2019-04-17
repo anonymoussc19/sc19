@@ -17,16 +17,21 @@ check the CMakeList.txt under tool/src, build it use cmake.
 
 move the couenne.opt and tileinput.txt to where you build and run the Tool binary.
 
-*Note the current machine spec is for i7 6700K skylake
 
 
-run ./Tool tile_input.txt ccsdt for tile size solving following bench:
+After compile
+For broadwell arch:
+
+run   "./Tool tile_input.txt ccsdt broadwell"      
+for tile size solving following bench:
 abcdef-****-****
 
-run ./Tool tile_input.txt ccsd for tile size solving following bench:
+run "./Tool tile_input.txt ccsd broadwell"
+ for tile size solving following bench:
 abcd-****-**** all size 72
 
-run ./Tool tile_input.txt abc-ad-312 for tile size solving following bench:
+run "./Tool tile_input.txt abc-ad-312 broadwell"
+ for tile size solving following bench:
 abc-acd-db
 a:312 b:312 c:312 d:312
 abc-ad-bdc	  
@@ -36,29 +41,29 @@ a:312 b:312 c:312 d:312
 abc-adc-db
 a:312 b:312 c:312 d:312
 
-run ./Tool tile_input.txt ab312 for tile size solving following bench:
+run " ./Tool tile_input.txt ab312 broadwell" for tile size solving following bench:
 ab-***-***
 
-run ./Tool tile_input.txt abcd-ea for tile size solving following bench:
+run " ./Tool tile_input.txt abcd-ea broadwell" for tile size solving following bench:
 abcd-e*-****
 
-run ./Tool tile_input.txt abc-dc-24 for tile size solving following bench:
+run " ./Tool tile_input.txt abc-dc-24  broadwell" for tile size solving following bench:
 abc-bda-dc
 
-run ./Tool tile_input.txt abcd-ebad for tile size solving following bench:
+run " ./Tool tile_input.txt abcd-ebad broadwell" for tile size solving following bench:
 abcd-****-**
 
-run ./Tool tile_input.txt abcde for tile size solving following bench:
+run " ./Tool tile_input.txt abcde broadwell" for tile size solving following bench:
 abcde-*****-**
 
 
 
-
+Replace the "broadwell" in command to "skylake" to run solver for skylake
 
 
 
 
 TEST:
-under test folder:
+under test folder, there are <arch>_ccsdt, <arch>_ccsd, and <arch>_others folder
 
-g++ -O3 -fopenmp -std=c99 -mavx2 *.c
+run ./run.sh
