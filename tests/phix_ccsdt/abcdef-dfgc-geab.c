@@ -58,7 +58,7 @@ C_range_g =  A_range_g =  B_range_g = atoi(argv[7]);
     Tm0 = 6;
 
     Tn4 = B_range_c * B_range_d * B_range_f;
-    Tn3 =8;
+    Tn3 =6144;
     Tn2 = 48;
     Tn1 = 8;
     Tn0 = 8;
