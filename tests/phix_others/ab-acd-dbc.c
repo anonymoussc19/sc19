@@ -290,12 +290,13 @@ else{
 	 
     double flop_count = 2.0 * C_range_a * C_range_b *C_range_c
             *C_range_d  *tot_runtime;
+
     long long cycles_tuned = (long)(((double) (COUNTER_DIFF_SIMPLE(b,a))) / ((long long) 1)); double  runtime = omp_get_wtime() - start;
+    printf("gflops = %lf\n", flop_count/1000/1000/1000/runtime); printf("\n");
     printf("flopcnt = %lf, ",flop_count);
     double flops_cycle_tuned = ((double)flop_count)/((double)cycles_tuned);
     printf("tot cyc= %12ld,  cycles,    %2.4f, flops/cycle\n",cycles_tuned, flops_cycle_tuned);
-    printf("gflops = %lf\n", flop_count/1000/1000/1000/runtime); printf("
-");
+
 
     for(int i=0;i<tot_runtime;i++)
     compare_fun(A, B, C1);
