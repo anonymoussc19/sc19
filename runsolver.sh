@@ -1,4 +1,5 @@
 #!/bin/bash
+#change module load according to your environment
 module load gcc/5.3.0
 module load cmake/3.9.0
 wget https://ampl.com/demo/ampl.linux64.tgz
