@@ -1,23 +1,19 @@
-Tile Solver
+Analytical Cache Modeling and Tilesize Optimization for Tensor Contractions
 
+Run solver: 
+change "module load" in ./runsolver.sh according to your env, run runsolver.sh will automatically download solver, and dump solving result under tool/build/bdwl_tiles or skyl_tiles.  Tile size options are at the tail of the file.  A flooring/ceiling operation might be needed before we use the tile size, to make sure the higher tile size are divisible by the lower.
+
+#####Ignore this if previous script works
 Please download AMPL interface at: 
 https://ampl.com/products/
 (Try to download the demo version if you don't want to buy)
 https://ampl.com/try-ampl/download-a-free-demo/
 
 Please download opensource solver at : https://projects.coin-or.org/Couenne
-
 Or if you cannot compile, download Couenne binary at https://ampl.com/products/solvers/open-source/#bonmin
-
 Add the binaries to $PATH
-
-
-
 check the CMakeList.txt under tool/src, build it use cmake.
-
 move the couenne.opt and tileinput.txt to where you build and run the Tool binary.
-
-
 
 After compile
 For broadwell arch:
@@ -56,14 +52,23 @@ abcd-****-**
 run " ./Tool tile_input.txt abcde broadwell" for tile size solving following bench:
 abcde-*****-**
 
-
-
 Replace the "broadwell" in command to "skylake" to run solver for skylake
 
 
 
 
-TEST:
-under test folder, there are <arch>_ccsdt, <arch>_ccsd, and <arch>_others folder
 
+
+
+
+
+
+
+
+
+Run Code using the tile size solution:
+under test folder, there are <arch>_ccsdt, <arch>_ccsd, and <arch>_others folder
 run ./run.sh
+
+
+
