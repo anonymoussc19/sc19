@@ -82,3 +82,8 @@ run install_tblis.sh to install tblis
 Compile and TBLIS test:
 In tblis_test/run.sh,  change TBLIS_ROOT to your TBLIS installation dir.
 run run.sh
+
+
+Install TCL: In install_tcl.sh. Change the source command according to you MKL configuration.  Then run install_tcl.sh
+
+Run TCL:  In tcl_test/run.sh. Change the source command according to you MKL configuration.  Change the HPTT_ROOT and TCL_ROOT to the dir you install hptt and tcl.  Run run.sh
