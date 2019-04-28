@@ -1,4 +1,5 @@
 #!/bin/bash
+#change according to your mkl.
 source /opt/software/intel/parallel_studio_xe_2018_cluster_edition/compilers_and_libraries_2018/linux/bin/compilervars.sh intel64
 export HPTT_ROOT= #YOUR HPTT INSTALLATION DIR
 export TCL_ROOT= #YOUR TCL INSTALLATION DIR
