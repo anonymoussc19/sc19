@@ -72,3 +72,13 @@ run ./run.sh
 
 
 
+
+
+Install TBLIS:
+In install_tblis.sh
+Change "module load gcc" to your gcc and change YOUR_INSTALL_DIR to your directory to for tblis installation.
+run install_tblis.sh to install tblis
+
+Compile and TBLIS test:
+In tblis_test/run.sh,  change TBLIS_ROOT to your TBLIS installation dir.
+run run.sh
