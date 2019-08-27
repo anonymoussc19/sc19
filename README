@@ -54,6 +54,8 @@ abcde-*****-**
 
 Replace the "broadwell" in command to "skylake" to run solver for skylake
 
+Replace the "broadwell" in command to "skylake-mpi" or "broadwell-mpi" to run solver for independent tensor contraction on mpi multi-thread.
+
 
 
 
