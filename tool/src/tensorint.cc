@@ -289,6 +289,29 @@ int main(int argc, char**argv){
              cache_vol = vector<double>({4096, 8*4096, 1024*1024}); //
              cache_way = vector<int>({512, 512*8*2, 65536});        //
     }
+    else if  (string(argv[3]) == string("broadwell-mpi")){
+        printf("bdwl-mpi\n");
+         bdw = vector<double>({2.63*4, 2.31*4, 1.03*4, 0.25*4}); //
+         cache_vol = vector<double>({4096, 8*4096, 4480*1024/14});  //
+         cache_way = vector<int>({512, 512*8, 229376/14});          //
+        
+    }
+        else if(string(argv[3]) == string("skylake-mpi")){
+                     bdw = vector<double>({2.31*4, 2.13*4, 1.19*4, 0.23*4});  //
+             cache_vol = vector<double>({4096, 8*4096, 1024*1024/4}); //
+             cache_way = vector<int>({512, 512*8*2, 65536/4});        //
+    }
+
+    else if (string(argv[3]) == string("haswell")){
+        printf("hswl\n");
+         bdw = vector<double>({2.3*4, 1.68*4, 0.74*4, 0.35*4}); //
+         cache_vol = vector<double>({4096, 8*4096, 1024*1024});  //
+         cache_way = vector<int>({512, 512*8, 65536});          //
+    }
+    else{
+        printf("arch not specified\n");
+        return 1;
+    }
     
     ampl_gen.set_bw_ca(bdw, cache_vol, cache_way);
     
