@@ -471,18 +471,18 @@ printf("gflops,  %lf\n", flop_count/1000/1000/1000/runtime);
     
     
 
-    for(int i=0;i<tot_runtime;i++)
-    compare_fun(A, B, C1);
+ /*    for(int i=0;i<tot_runtime;i++) */
+/*     compare_fun(A, B, C1); */
 
-    for(int i=0; i< A_range_a * B_range_b *B_range_c
-            *A_range_d * A_range_e * B_range_f ;i++){
-//        if(C[i] != C1[i]){
-        if( C[i] != C1[i]){
-            //printf("error at C[%d], C %lf, C1 %lf\n", i, C[i], C1[i]);
-                return 0;
-        }
-    }
-    printf("correct\n");
+/*     for(int i=0; i< A_range_a * B_range_b *B_range_c */
+/*             *A_range_d * A_range_e * B_range_f ;i++){ */
+/* //        if(C[i] != C1[i]){ */
+/*         if( C[i] != C1[i]){ */
+/*             //printf("error at C[%d], C %lf, C1 %lf\n", i, C[i], C1[i]); */
+/*                 return 0; */
+/*         } */
+/*     } */
+/*     printf("correct\n"); */
 
 return 0;
 }
