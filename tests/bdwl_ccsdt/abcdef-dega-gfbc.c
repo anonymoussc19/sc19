@@ -460,18 +460,18 @@ else{
     double flops_cycle_tuned = ((double)flop_count)/((double)cycles_tuned);
     printf("tot cyc= %12ld,  cycles,    %2.4f, flops/cycle\n",cycles_tuned, flops_cycle_tuned);
 
-    for(int i=0;i<tot_runtime;i++)
-    compare_fun(A, B, C1);
+ /*    for(int i=0;i<tot_runtime;i++) */
+/*     compare_fun(A, B, C1); */
 
-    for(int i=0; i< A_range_a * B_range_b *B_range_c
-            *A_range_d * A_range_e * B_range_f ;i++){
-//        if(C[i] != C1[i]){
-        if( C[i] != C1[i]){
-            printf("error at C[%d], C %lf, C1 %lf\n", i, C[i], C1[i]);
-                return 1;
-        }
-    }
-    printf("correct\n");
+/*     for(int i=0; i< A_range_a * B_range_b *B_range_c */
+/*             *A_range_d * A_range_e * B_range_f ;i++){ */
+/* //        if(C[i] != C1[i]){ */
+/*         if( C[i] != C1[i]){ */
+/*             printf("error at C[%d], C %lf, C1 %lf\n", i, C[i], C1[i]); */
+/*                 return 1; */
+/*         } */
+/*     } */
+/*     printf("correct\n"); */
 
 return 0;
 }
